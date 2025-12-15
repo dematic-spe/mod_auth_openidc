@@ -445,7 +445,6 @@ void oidc_jwk_list_destroy_hash(apr_hash_t *keys) {
 		oidc_jwk_destroy(jwk);
 		apr_hash_set(keys, key, klen, NULL);
 	}
-	apr_hash_clear(keys);
 }
 
 /*

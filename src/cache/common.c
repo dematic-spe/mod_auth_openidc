@@ -51,8 +51,6 @@
 #include "cfg/cache.h"
 #include "cfg/cfg_int.h"
 #include "jose.h"
-#include "..\mod_auth_openidc.h"
-
 #include "metrics.h"
 #include "util/util.h"
 

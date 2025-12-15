@@ -9,30 +9,24 @@ mod_auth_openidc
 *mod_auth_openidc* is an OpenID Certified™ authentication and authorization module for the Apache 2.x
 HTTP server that implements the OpenID Connect 1.x and FAPI 2.x Relying Party functionality.
 
-Build steps
---------
-https://github.com/zmartzone/mod_auth_openidc was copied to https://github.com/dematic-spe/mod_auth_openidc
-1) bootstrap-windows.cmd
-2) build.cmd -  the output is in the target folder.
-  The output is two zip files, one for x86 and one for x64.
-3) deploy_to_artifactory.cmd
-
-
-
 Overview
 --------
 
 This module enables an Apache 2.x web server to operate as an [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html)
-*Relying Party* (RP) to an OpenID Connect *Provider* (OP). It authenticates users against an OpenID Connect Provider,
-receives user identity information from the OP in a so called ID Token and passes on the identity information
-(a.k.a. claims) in the ID Token to applications hosted and protected by the Apache web server.
+*Relying Party* (RP) towards an OpenID Connect *Provider* (OP). It relays end user authentication to a Provider and
+receives user identity information from that Provider. It then passes on that identity information (a.k.a. claims)
+to applications protected by the Apache web server and establishes an authentication session for the identified user.
 
-The protected content and/or applications can be served by the Apache server itself or it can be served from elsewhere
-when Apache is configured as a Reverse Proxy in front of the origin server(s).
+The protected content, applications and services can be hosted by the Apache server itself or served from
+origin server(s) residing behind it by configuring Apache as a Reverse Proxy in front of those servers. The 
+latter allows for adding OpenID Connect based authentication to existing applications/services/SPAs without
+modifying those applications, possibly migrating them away from legacy authentication mechanisms to standards-based
+OpenID Connect Single Sign On (SSO).
 
 By default the module sets the `REMOTE_USER` variable to the `id_token` `[sub]` claim, concatenated with the OP's Issuer
 identifier (`[sub]@[iss]`). Other `id_token` claims are passed in HTTP headers and/or environment variables together with those
-(optionally) obtained from the UserInfo endpoint.
+(optionally) obtained from the UserInfo endpoint. The provided HTTP headers and environment variables can be consumed by
+applications protected by the Apache server.
 
 Custom fine-grained authorization rules - based on Apache's `Require` primitives - can be specified to match against the
 set of claims provided in the `id_token`/ `userinfo` claims, see [here](https://github.com/OpenIDC/mod_auth_openidc/wiki/Authorization). 
@@ -100,9 +94,6 @@ Interoperability and Supported Specifications
 - [OpenID Connect Session Management 1.0](http://openid.net/specs/openid-connect-session-1_0.html) *see the [Wiki](https://github.com/OpenIDC/mod_auth_openidc/wiki/OpenID-Connect-Session-Management) for information on how to configure it)*
 - [OpenID Connect Front-Channel Logout 1.0](http://openid.net/specs/openid-connect-frontchannel-1_0.html)
 - [OpenID Connect Back-Channel Logout 1.0](https://openid.net/specs/openid-connect-backchannel-1_0.html)
-
-For an exhaustive description of all configuration options, see the file `auth_openidc.conf`
-in this directory. This file can also serve as an include file for `httpd.conf`.
 
 Support
 -------

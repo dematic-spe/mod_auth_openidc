@@ -48,9 +48,6 @@
 #include "cfg/cache.h"
 #include "cfg/cfg_int.h"
 #include <apr_shm.h>
-#include "..\mod_auth_openidc.h"
-
-extern module AP_MODULE_DECLARE_DATA auth_openidc_module;
 
 typedef struct oidc_cache_cfg_shm_t {
 	apr_shm_t *shm;
