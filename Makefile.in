@@ -6,7 +6,7 @@ SRC=src/mod_auth_openidc.c \
 	src/oauth.c \
 	src/proto.c \
 	src/config.c \
-	src/util.c \
+	src/util/util.c \
 	src/authz.c \
 	src/session.c \
 	src/metadata.c \
