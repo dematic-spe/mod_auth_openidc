@@ -1,6 +1,0 @@
-[submodule "vcpkg"]
-	path = vcpkg
-	url = https://github.com/microsoft/vcpkg.git
-[submodule "cjose"]
-	path = cjose
-	url = git@github.com:OpenIDC/cjose.git
