@@ -10,6 +10,6 @@ set yourcompany=dematic
 
 set FILE=target\mod_auth_openidc-2.4.19-win64-VS16.zip
 set EXTRAS=-Dfile=%FILE% -Durl=https://artifactory.%yourcompany%.com/artifactory/ThirdParty -DrepositoryId=ThirdParty -DgeneratePom=true
-call mvn -B deploy:deploy-file -DgroupId=COTS.Apache.httpd -DartifactId=mod_auth_openidc -Dversion=2.4.15_7 -Dclassifier=win64-VS16 -Dpackaging=zip %EXTRAS%
+call mvn -B deploy:deploy-file -DgroupId=COTS.Apache.httpd -DartifactId=mod_auth_openidc -Dversion=2.4.19 -Dclassifier=win64-VS16 -Dpackaging=zip %EXTRAS%
 
 pause
