@@ -677,7 +677,7 @@ static const char *oidc_http_user_agent(request_rec *r) {
 	const char *s_useragent = apr_table_get(r->subprocess_env, OIDC_USER_AGENT_ENV_VAR);
 	if (s_useragent == NULL) {
 		s_useragent = apr_psprintf(r->pool, "[%s:%u:%lu] %s", r->server->server_hostname,
-					   r->connection->local_addr->port, (unsigned long)getpid(), NAMEVERSION);
+					   r->connection->local_addr->port, (unsigned long)_getpid(), NAMEVERSION);
 		s_useragent = apr_psprintf(r->pool, "%s libcurl-%s %s", s_useragent, LIBCURL_VERSION,
 					   oidc_util_openssl_version(r->pool));
 	}

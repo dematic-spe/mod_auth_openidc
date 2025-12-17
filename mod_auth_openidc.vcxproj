@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{7CDF9456-EB3A-41FE-94A0-DCCBC5F958C9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>modauthopenidc</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath);$(ProjectDir)target\httpd-latest\Apache24\include;$(ProjectDir)cjose\include;$(ProjectDir)vcpkg\installed\x86-windows\include;$(ProjectDir)\src;$(ProjectDir)\src\util</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(ProjectDir)\target\httpd-latest\Apache24\include;$(ProjectDir)cjose\include;$(ProjectDir)\vcpkg\installed\x64-windows\include;$(ProjectDir)\src;$(ProjectDir)\src\util;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);WIN32</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;NAMEVER=mod_auth_openidc=2.4.16.5</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);WIN32;_CRT_SECURE_NO_WARNINGS;NAMEVER=mod_auth_openidc=2.4.16.5</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)\target\httpd-latest\Apache24\lib;$(ProjectDir)\vcpkg\installed\x64-windows\lib;$(ProjectDir)\vcpkg\installed\x64-windows\lib\manual-link;$(ProjectDir)\cjose\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libhttpd.lib;libapr-1.lib;libaprutil-1.lib;Ws2_32.lib;pcre.lib;libssl.lib;libcrypto.lib;cjose.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\cache\cache.h" />
+    <ClInclude Include="src\cache\redis.h" />
+    <ClInclude Include="src\handle\handle.h" />
+    <ClInclude Include="src\http.h" />
+    <ClInclude Include="src\jose.h" />
+    <ClInclude Include="src\metrics.h" />
+    <ClInclude Include="src\mod_auth_openidc.h" />
+    <ClInclude Include="src\util\pcre_subst.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\cache\common.c" />
+    <ClCompile Include="src\cache\file.c">
+      <ObjectFileName>$(IntDir)cache_file.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\cache\memcache.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\cache\redis.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+	<ClCompile Include="src\cache\shm.c" />
+    <ClCompile Include="src\handle\authz.c" />
+    <ClCompile Include="src\handle\content.c" />
+    <ClCompile Include="src\handle\discovery.c" />
+	<ClCompile Include="src\handle\dpop.c">
+		<ObjectFileName>$(IntDir)dpop_handle.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\handle\info.c" />
+    <ClCompile Include="src\handle\jwks.c" />
+    <ClCompile Include="src\handle\logout.c" />
+    <ClCompile Include="src\handle\refresh.c" />
+    <ClCompile Include="src\handle\request.c" />
+    <ClCompile Include="src\handle\request_uri.c" />
+    <ClCompile Include="src\handle\response.c" />
+    <ClCompile Include="src\handle\revoke.c" />
+    <ClCompile Include="src\handle\session_management.c" />
+    <ClCompile Include="src\handle\userinfo.c" />
+    <ClCompile Include="src\http.c" />
+    <ClCompile Include="src\jose.c" />
+    <ClCompile Include="src\metadata.c" />
+    <ClCompile Include="src\metrics.c" />
+    <ClCompile Include="src\mod_auth_openidc.c" />
+    <ClCompile Include="src\oauth.c" />
+    <ClCompile Include="src\cfg\cache.c">
+		<ObjectFileName>$(IntDir)cache_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\cfg.c">
+		<ObjectFileName>$(IntDir)cfg_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\cmds.c">
+		<ObjectFileName>$(IntDir)cmds_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\dir.c">
+		<ObjectFileName>$(IntDir)dir_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\oauth.c">
+		<ObjectFileName>$(IntDir)oauth_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\parse.c">
+		<ObjectFileName>$(IntDir)parse_cfg.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\cfg\provider.c">
+		<ObjectFileName>$(IntDir)provider_cfg.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\util\pcre_subst.c" />
+    <ClCompile Include="src\proto\auth.c">
+		<ObjectFileName>$(IntDir)auth_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\discovery.c">
+		<ObjectFileName>$(IntDir)discovery_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\dpop.c">
+		<ObjectFileName>$(IntDir)dpop_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\id_token.c">
+		<ObjectFileName>$(IntDir)id_token_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\jwks.c">
+		<ObjectFileName>$(IntDir)jwks_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\jwt.c">
+		<ObjectFileName>$(IntDir)jwt_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\pkce.c">
+		<ObjectFileName>$(IntDir)pkce_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\profile.c">
+		<ObjectFileName>$(IntDir)profile_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\proto.c">
+		<ObjectFileName>$(IntDir)proto_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\request.c">
+		<ObjectFileName>$(IntDir)request_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\response.c">
+		<ObjectFileName>$(IntDir)response_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\state.c">
+      <ObjectFileName>$(IntDir)state_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\token.c">
+		<ObjectFileName>$(IntDir)token_proto.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\proto\userinfo.c">
+		<ObjectFileName>$(IntDir)userinfo_proto.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\session.c">
+		<ObjectFileName>$(IntDir)session.obj</ObjectFileName>
+    </ClCompile>
+	<ClCompile Include="src\state.c">
+		<ObjectFileName>$(IntDir)state.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\util\appinfo.c" />
+    <ClCompile Include="src\util\base64.c" />
+    <ClCompile Include="src\util\expr.c" />
+    <ClCompile Include="src\util\file.c">
+      <ObjectFileName>$(IntDir)util_file.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="src\util\html.c" />
+    <ClCompile Include="src\util\jq.c" />
+    <ClCompile Include="src\util\json.c" />
+    <ClCompile Include="src\util\jwt.c" />
+    <ClCompile Include="src\util\key.c" />
+    <ClCompile Include="src\util\random.c" />
+    <ClCompile Include="src\util\url.c" />
+    <ClCompile Include="src\util\util.c" />
+    <!-- <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile> -->
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -98,7 +98,8 @@ static apr_byte_t oidc_cache_mutex_global_create(apr_pool_t *pool, server_rec *s
 	}
 
 	m->mutex_filename =
-	    apr_psprintf(pool, "%s/mod_auth_openidc_%s_mutex.%ld.%pp", dir, type, (long int)getpid(), s);
+
+	apr_psprintf(pool, "%s/mod_auth_openidc_%s_mutex.%ld.%pp", dir, type, (long int)_getpid(), s);
 
 	/* set the lock type */
 	apr_lockmech_e mech =
