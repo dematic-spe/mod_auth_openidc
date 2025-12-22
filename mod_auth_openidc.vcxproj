@@ -149,8 +149,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)\target\httpd-latest\Apache24\lib;$(ProjectDir)\vcpkg\installed\x64-windows\lib;$(ProjectDir)\vcpkg\installed\x64-windows\lib\manual-link;$(ProjectDir)\cjose\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libhttpd.lib;libapr-1.lib;libaprutil-1.lib;Ws2_32.lib;pcre.lib;libssl.lib;libcrypto.lib;cjose.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)cjose\x64\Release;$(ProjectDir)vcpkg\installed\x64-windows\lib;$(ProjectDir)target\httpd-latest\Apache24\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cjose.lib;libhttpd.lib;libapr-1.lib;libaprutil-1.lib;libapriconv-1.lib;libcurl.lib;libssl.lib;libcrypto.lib;jansson.lib;pcre.lib;zlib.lib;ws2_32.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

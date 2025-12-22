@@ -43,8 +43,12 @@
  * @Author: Hans Zandbelt - hans.zandbelt@openidc.com
  */
 
-#ifndef WIN32
+#ifdef WIN32
+#include <process.h>
+#define oidc_getpid _getpid
+#else
 #include <unistd.h>
+#define oidc_getpid getpid
 #endif
 
 #include "cache/cache.h"
@@ -99,7 +103,7 @@ static apr_byte_t oidc_cache_mutex_global_create(apr_pool_t *pool, server_rec *s
 
 	m->mutex_filename =
 
-	apr_psprintf(pool, "%s/mod_auth_openidc_%s_mutex.%ld.%pp", dir, type, (long int)_getpid(), s);
+	apr_psprintf(pool, "%s/mod_auth_openidc_%s_mutex.%ld.%pp", dir, type, (long int)oidc_getpid(), s);
 
 	/* set the lock type */
 	apr_lockmech_e mech =
